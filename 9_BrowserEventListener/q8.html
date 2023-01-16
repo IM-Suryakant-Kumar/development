@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .pink {
+        width: 20rem;
+        height: 20rem;
+        background-color: lightpink;
+        position: absolute;
+      }
+      .blue {
+        background-color: lightblue;
+        width: 10rem;
+        height: 10rem;
+        margin: auto;
+        margin-top: 5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pink">
+      <div class="blue"></div>
+    </div>
+    <script>
+      // The following code is broken. Even when clicked on blue, its alerted that pink is clicked. Fix it
+
+      let pink = document.querySelector(".pink");
+      let blue = document.querySelector(".blue");
+
+      pink.addEventListener('click', (e)=>{
+        if(e.target === e.currentTarget)
+        alert("Pink was clcked")
+      })
+    </script>
+  </body>
+</html>
