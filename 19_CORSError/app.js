@@ -11,5 +11,5 @@ app.post("/", (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("Listing to port: 3000");
+  console.log("Listing to port: 3000.");
 });
