@@ -1,0 +1,14 @@
+- HTML
+- CSS
+- JavaScript
+- TypeScript
+- ReactJS
+- React Router DOM
+- Redux Toolkit
+- RTK Query
+- TailwindCSS
+- Styled Components
+- MaterialUI
+- Node, Express, MongoDB, SQL, Postgresql
+- NextJS
+- ZOD, prisma
