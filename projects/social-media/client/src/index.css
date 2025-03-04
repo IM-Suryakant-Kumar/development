@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -7,4 +7,39 @@
 	--color-gray: #cad1c9;
 	--color-highlight: #0ebd60;
 	--font-cinzel: "Cinzel", serif;
+  --font-exo2: "Exo 2", sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-exo2);
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  /* form start */
+  .form-title {
+    @apply font-cinzel font-bold text-2xl text-center text-highlight mb-8;
+  }
+
+  .input {
+    @apply border-b border-highlight outline-0 px-2 py-1 text-sm;
+  }
+
+  .btn {
+    @apply p-1 font-semibold border rounded-sm text-sm;
+  }
+
+  .btn-primary {
+    @apply bg-highlight text-primary hover:bg-primary hover:text-highlight hover:border-highlight;
+  }
+
+  .btn-secondary {
+    @apply border-highlight text-highlight hover:bg-highlight hover:text-primary;
+  }
+  /* form end */
 }
