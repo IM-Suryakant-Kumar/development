@@ -1,0 +1,49 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+main > *:first-child {
+  flex: 1;
+}
+
+main > *:last-child {
+  flex: 6;
+  margin-top: 2em;
+}
+
+
+ul {
+  list-style: none;
+  padding: 2rem;
+}
+
+li {
+  /* margin-top: 2px; */
+  width: 4rem;
+  /* overflow: hidden; */
+  border-bottom: 1px solid #eeeeee;
+}
+
+a {
+  display: inline-block;
+  width: 100%;
+  font-size: small;
+  font-weight: bold;
+  padding: 0 0.2em;
+  text-decoration: none;
+  text-transform: capitalize;
+  background: #464646;
+  color: #ffffff;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #00000050 #212121 #212121 #00000050;
+  border-radius: 0.1em;
+  box-shadow: 2px 2px 1px 1px #21212150;
+}
