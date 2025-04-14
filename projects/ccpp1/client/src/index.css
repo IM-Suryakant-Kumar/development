@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+	--color-primary: #ebf2fa;
+	--color-secondary: #cae9ff;
+	--color-logo: #3a86ff;
+	--font-primary: "Exo 2", sans-serif;
+	--font-secondary: "Cinzel", serif;
+}
+
+@layer base {
+	*,
+	*::after,
+	*::before {
+    @apply text-gray-900 font-primary;
+	}
+
+	body {
+		@apply bg-primary;
+	}
+
+  main {
+    @apply w-[95%] md:w-[90%] mx-auto;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply bg-logo text-primary text-sm md:text-base select-none font-secondary font-semibold uppercase border-2 px-4 py-2 rounded-full hover:bg-primary hover:text-logo cursor-pointer;
+  }
+
+  .logo {
+    @apply text-logo text-3xl font-secondary font-bold;
+  }
+
+  .error-message {
+    @apply text-red-600 text-xs;
+  }
+
+  .text-field {
+    @apply text-sm outline-none p-1 border-b-2 border-logo inset-shadow-sm;
+  }
+}
