@@ -1,11 +1,17 @@
 import { Navigate, Outlet, useLocation } from "react-router";
+import Navbar from "../Navbar";
+import Sidebar from "../Sidebar";
 
 const HostLayout = () => {
 	const pathname = useLocation().pathname;
 	const user = true;
 
 	return user ? (
-		<Outlet />
+    <>
+      <Navbar />
+		  <Outlet />
+      <Sidebar />
+    </>
 	) : (
 		<Navigate
 			to="/login"
