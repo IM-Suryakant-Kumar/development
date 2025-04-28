@@ -1,18 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import { AuthLayout, HostLayout, Layout } from "./components";
-import {
-	Explore,
-	Home,
-	Landing,
-	LikedPosts,
-	Login,
-	NotFound,
-	Posts,
-	Profile,
-	SavedPosts,
-	Setting,
-	Signup,
-} from "./pages";
+import { Explore, Home, Landing, Login, NotFound, Profile, Setting, Signup } from "./pages";
 
 const App = () => {
 	const router = createBrowserRouter([
@@ -25,15 +13,8 @@ const App = () => {
 					children: [
 						{ path: "home", element: <Home /> },
 						{ path: "explore", element: <Explore /> },
-						{
-              element: <Profile />,
-							children: [
-								{ path: "profile", element: <Posts /> },
-								{ path: "liked", element: <LikedPosts /> },
-								{ path: "saved", element: <SavedPosts /> },
-							],
-						},
-            { path: "setting", element: <Setting /> },
+						{ path: "Profile/:username", element: <Profile /> },
+						{ path: "settings", element: <Setting /> },
 					],
 				},
 				{

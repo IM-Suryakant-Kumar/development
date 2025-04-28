@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -13,32 +13,55 @@
 	*,
 	*::after,
 	*::before {
-    @apply text-gray-900 font-primary;
+		@apply text-gray-900 font-primary;
 	}
 
 	body {
 		@apply bg-primary;
 	}
 
-  main {
-    @apply w-[95%] md:w-[90%] mx-auto;
-  }
+	a {
+		@apply fill-logo text-logo border-2 border-secondary sm:border-none;
+	}
+
+	a:hover,
+	a.active {
+		@apply border-2 fill-logo border-logo rounded-full sm:border-none sm:bg-logo sm:text-primary sm:fill-primary;
+	}
 }
 
 @layer components {
-  .btn {
-    @apply bg-logo text-primary text-sm md:text-base select-none font-secondary font-semibold uppercase border-2 px-4 py-2 rounded-full hover:bg-primary hover:text-logo cursor-pointer;
-  }
+	.wrapper {
+		@apply w-[95%] md:w-[90%] mx-auto;
+	}
 
-  .logo {
-    @apply text-logo text-3xl font-secondary font-bold;
-  }
+	.btn {
+		@apply bg-logo text-primary text-sm md:text-base select-none font-secondary font-semibold uppercase border-2 px-4 py-2 rounded-full hover:bg-primary hover:text-logo cursor-pointer;
+	}
 
-  .error-message {
-    @apply text-red-600 text-xs;
-  }
+	.filters-btn {
+		@apply w-25 h-6 sm:w-30 sm:h-7 flex justify-center items-center font-secondary font-semibold text-xs text-logo rounded-full hover:bg-logo hover:text-primary border-2 border-logo cursor-pointer;
+	}
 
-  .text-field {
-    @apply text-sm outline-none p-1 border-b-2 border-logo inset-shadow-sm;
-  }
+	.logo {
+		@apply text-logo text-3xl font-secondary font-bold;
+	}
+
+	.error-message {
+		@apply text-red-600 text-xs;
+	}
+
+	.text-field {
+		@apply text-sm outline-none p-1 border-b-2 border-logo inset-shadow-sm;
+	}
+}
+
+@layer utilities {
+	.scrollbar-none::-webkit-scrollbar {
+		display: none;
+	}
+	.scrollbar-none {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
 }

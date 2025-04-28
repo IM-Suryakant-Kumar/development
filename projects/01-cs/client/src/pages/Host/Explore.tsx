@@ -1,6 +1,10 @@
+import { Posts } from "../../components"
+
 const Explore = () => {
   return (
-    <div>Explore</div>
+    <article className="max-w-xl mx-auto">
+      <Posts />
+    </article>
   )
 }
 
