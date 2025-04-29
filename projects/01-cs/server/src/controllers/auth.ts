@@ -15,12 +15,6 @@ export const login = asyncWrapper(async (req: Request, res: Response) => {
 	if (!(email && password)) throw new BadRequestError("Please provide email and password");
 
 	const user = await User.findOne({ email })
-		.select("+password")
-		.populate("followers")
-		.populate("followings")
-		.populate("posts")
-		.populate("saved")
-		.populate("liked");
 	if (!user) throw new UnauthenticatedError("Invalid credentials");
 
 	const isPasswordCorrect = await user.comparePassword(password);
@@ -31,12 +25,6 @@ export const login = asyncWrapper(async (req: Request, res: Response) => {
 
 export const guestLogin = asyncWrapper(async (req: Request, res: Response) => {
 	const user = await User.findOne({ email: "ccpp@gmail.com" })
-		.select("+password")
-		.populate("followers")
-		.populate("followings")
-		.populate("posts")
-		.populate("saved")
-		.populate("liked");
 	if (!user) throw new UnauthenticatedError("Invalid credentials");
 
 	const isPasswordCorrect = await user.comparePassword("secret");
@@ -48,5 +36,5 @@ export const guestLogin = asyncWrapper(async (req: Request, res: Response) => {
 export const logout = asyncWrapper(async (req: Request, res: Response) => {
 	res
 		.status(200)
-		.json({ success: true, message: "Logged  out successfully", token: null, user: null });
+		.json({ success: true, message: "Logged  out successfully", token: null });
 });

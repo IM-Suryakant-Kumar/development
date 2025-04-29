@@ -4,8 +4,8 @@ import { Post } from "../models";
 import { IReq } from "../types";
 
 export const createPost = asyncWrapper(async (req: IReq, res: Response) => {
-	const post = await Post.create({ ...req.body, author: req.user?._id });
-	res.status(201).json({ success: true, post });
+	await Post.create({ ...req.body, author: req.user?._id });
+	res.status(201).json({ success: true, message: "Post created successfully" });
 });
 
 export const getPosts = asyncWrapper(async (req: IReq, res: Response) => {
@@ -18,16 +18,6 @@ export const getPosts = asyncWrapper(async (req: IReq, res: Response) => {
 	res.status(200).json({ success: true, posts });
 });
 
-export const getPost = asyncWrapper(async (req: IReq, res: Response) => {
-	const post = await Post.findById(req.params.postId)
-		.populate("author")
-		.populate("liked")
-		.populate("saved")
-		.populate("comments");
-
-	res.status(200).json({ success: true, post });
-});
-
 export const updatePost = asyncWrapper(async (req: IReq, res: Response) => {
 	const body = req.body;
 	const q = req.query.q;
@@ -37,13 +27,9 @@ export const updatePost = asyncWrapper(async (req: IReq, res: Response) => {
 	else if (q === "saved") body.$push = { saved: req.user?._id };
 	else if (q === "unsaved") body.$pull = { saved: req.user?._id };
 
-	const post = await Post.findByIdAndUpdate(req.params.postId, body, { new: true })
-		.populate("author")
-		.populate("liked")
-		.populate("saved")
-		.populate("comments");
+	await Post.findByIdAndUpdate(req.params.postId, body);
 
-	res.status(200).json({ success: true, post });
+	res.status(200).json({ success: true, message: "Post updated successfully" });
 });
 
 export const deletePost = asyncWrapper(async (req: IReq, res: Response) => {
