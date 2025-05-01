@@ -14,9 +14,13 @@ export const getUsers = asyncWrapper(async (req: IReq, res: Response) => {
 	res.status(200).json({ success: true, users });
 });
 
-export const updateUser = asyncWrapper(async (req: IReq, res: Response) => {
-	await User.findByIdAndUpdate(req.user?._id, req.body);
-	res.status(200).json({ success: true, message: "Profile updated successfully" });
+export const getProfile = asyncWrapper(async (req: IReq, res: Response) => {
+  res.status(200).json({ success: true, user: req.user });
+});
+
+export const updateProfile = asyncWrapper(async (req: IReq, res: Response) => {
+  await User.findByIdAndUpdate(req.user?._id, req.body);
+  res.status(200).json({ success: true, message: "Profile updated successfully" });
 });
 
 export const createFollowing = asyncWrapper(async (req: IReq, res: Response) => {
