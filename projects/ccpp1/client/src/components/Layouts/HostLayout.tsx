@@ -1,9 +1,11 @@
 import { Navigate, Outlet, useLocation } from "react-router";
 import { Navbar, Sidebar, RightSidebar } from "../../components";
+import { useGetProfileQuery } from "../../app/services/user";
 
 export const HostLayout = () => {
+  const {data} = useGetProfileQuery();
 	const pathname = useLocation().pathname;
-	const user = true;
+	const user = data?.user;
 
 	return user ? (
 		<>

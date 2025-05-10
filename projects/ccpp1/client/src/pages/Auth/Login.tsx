@@ -1,15 +1,17 @@
 import { Link, useLocation } from "react-router";
+import { useLoginMutation, User } from "../../app/services/auth";
 
 const Login = () => {
+	const [login, { isLoading: isLoginLoading, error: loginError }] = useLoginMutation();
 	const state = useLocation().state;
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const formData = new FormData(e.currentTarget);
-		const name = formData.get("name");
-		const email = formData.get("email");
+		const email = formData.get("email") as string;
+		const password = formData.get("password") as string;
 
-		console.log("Name: ", name, "Email: ", email);
+		login({email, password} as User);
 	};
 
 	return (
@@ -22,9 +24,10 @@ const Login = () => {
 				<h1 className="text-logo text-2xl md:text-3xl font-secondary font-bold mt-4">LogIn</h1>
 				{/* error message */}
 				{state?.message && <p className="error-message">{state.message}</p>}
+				{loginError && <p className="error-message">{loginError}</p>}
 				{/* input */}
-				<input className="text-field mt-4" type="text" name="name" placeholder="Name: " />
 				<input className="text-field" type="email" name="email" placeholder="Email: " />
+				<input className="text-field mt-4" type="password" name="password" placeholder="Password: " />
 				{/* buttons */}
 				<button className="btn rounded-xs text-sm py-1.5 mt-4" type="submit">
 					Login

@@ -14,7 +14,7 @@ const PORT = process.env.PORT;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
-app.use(cors({ origin: ".", credentials: true }));
+app.use(cors({ origin: "*", credentials: true }));
 app.use(morgan("tiny"));
 
 app.use("/api/auth", authRouter);

@@ -5,26 +5,26 @@ import { Explore, Home, Landing, Login, NotFound, Profile, Setting, Signup } fro
 const App = () => {
 	const router = createBrowserRouter([
 		{
-			element: <Layout />,
+			Component: Layout,
 			children: [
-				{ path: "/", element: <Landing /> },
+				{ path: "/", Component: Landing },
 				{
-					element: <HostLayout />,
+					Component: HostLayout,
 					children: [
-						{ path: "home", element: <Home /> },
-						{ path: "explore", element: <Explore /> },
-						{ path: "Profile/:username", element: <Profile /> },
-						{ path: "settings", element: <Setting /> },
+						{ path: "home", Component: Home },
+						{ path: "explore", Component: Explore },
+						{ path: "Profile/:username", Component: Profile },
+						{ path: "settings", Component: Setting },
 					],
 				},
 				{
-					element: <AuthLayout />,
+					Component: AuthLayout,
 					children: [
-						{ path: "login", element: <Login /> },
-						{ path: "signup", element: <Signup /> },
+						{ path: "login", Component: Login },
+						{ path: "signup", Component: Signup },
 					],
 				},
-				{ path: "*", element: <NotFound /> },
+				{ path: "*", Component: NotFound },
 			],
 		},
 	]);
