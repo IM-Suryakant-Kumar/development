@@ -1,6 +1,5 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router'
-import './App.css'
 import { AuthLayout, HostLayout, Layout } from './components'
 import { Archive, Landing, Login, Note, NotFound, Signup, Trash } from './pages'
 
