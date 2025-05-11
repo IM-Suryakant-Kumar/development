@@ -3,6 +3,7 @@ import express from "express";
 import helmet from "helmet";
 import cors from "cors";
 import morgan from "morgan";
+import { connectDB } from "./db";
 import { authenticateUser, errorHandlerMiddleware, notFoundMiddlewware } from "./middlewares";
 import { archiveRouter, authRouter, noteRouter, trashRouter } from "./routes";
 
@@ -26,6 +27,7 @@ app.use(errorHandlerMiddleware);
 
 (async () => {
 	try {
+		await connectDB(process.env.MONGO_URL as string);
 		app.listen(PORT, () => console.log(`App is running at http://localhost:${PORT}`));
 	} catch (error) {
 		console.error(error);
