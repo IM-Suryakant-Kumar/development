@@ -8,14 +8,14 @@ const userSchema = new Schema<IUser>(
 		name: {
 			type: String,
 			required: [true, "Please Provide name"],
-			minlength: [3, "Name should not be less than 3 and greater than 20 chracters"],
-			maxlength: [20, "Name should not be less than 3 and greater than 20 chracters"],
+			minlength: [3, "Name should not be less than 3 chracters"],
 		},
-		email: { type: String, required: [true, "Please Provide email"] },
+		email: { type: String, required: [true, "Please Provide email"], unique: true },
 		password: {
 			type: String,
 			required: [true, "Please Provide password"],
 			minlength: [3, "Password should not be less than 3 chracters"],
+			select: false,
 		},
 		notes: [{ type: Schema.Types.ObjectId, ref: "Note" }],
 		archives: [{ type: Schema.Types.ObjectId, ref: "Note" }],

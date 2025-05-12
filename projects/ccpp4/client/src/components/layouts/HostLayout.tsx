@@ -9,7 +9,9 @@ export const HostLayout = () => {
 		<>
 			<Navbar />
 			<Sidebar />
-			<Outlet />
+			<article className="py-15 md:pb-0">
+				<Outlet />
+			</article>
 		</>
 	) : (
 		<Navigate

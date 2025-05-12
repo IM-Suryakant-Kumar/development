@@ -12,9 +12,9 @@ function App() {
         {
           Component: HostLayout,
           children: [
-            { path: "/note", Component: Note },
-            { path: "/archive", Component: Archive },
-            { path: "/trash", Component: Trash },
+            { path: "note", Component: Note },
+            { path: "archive", Component: Archive },
+            { path: "trash", Component: Trash },
           ]
         },
         {

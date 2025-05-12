@@ -19,6 +19,10 @@
 	body {
 		@apply bg-primary;
 	}
+
+  a.active {
+    @apply border border-logo;
+  }
 }
 
 @layer components {

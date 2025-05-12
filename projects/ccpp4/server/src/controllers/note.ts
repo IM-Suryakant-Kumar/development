@@ -3,7 +3,7 @@ import { asyncWrapper } from "../middlewares";
 import { Note, User } from "../models";
 
 export const createNote = asyncWrapper(async (req: Request | any, res: Response) => {
-	const note = await Note.create(req.body);
+	const note = await Note.create({ ...req.body, author: req.user._id });
 	await User.findByIdAndUpdate(req.user._id, { $push: { notes: note._id } });
 	res.status(201).json({ success: true, message: "Note created successfully" });
 });

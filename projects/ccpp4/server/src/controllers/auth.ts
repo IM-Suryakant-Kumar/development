@@ -14,7 +14,7 @@ export const login = asyncWrapper(async (req: Request, res: Response) => {
 
 	if (!(email && password)) throw new BadRequestError("Please provide email and password");
 
-	const user = await User.findOne({ email });
+	const user = await User.findOne({ email }).select("+password");
 	if (!user) throw new UnauthenticatedError("Invalid Credentials");
 
 	const isPasswordCorrect = await user.comparePassword(password);
