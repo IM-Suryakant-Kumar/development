@@ -9,15 +9,15 @@ export const Sidebar = () => {
       <section className="wrapper flex items-center justify-between">
         <NavLink to="/note" className="">
           <TfiPencilAlt2 className="fill-logo" />
-          <span className="">Note</span>
+          <span className="hidden md:block">Note</span>
         </NavLink>
         <NavLink to="/archive" className="">
           <IoArchiveOutline className="fill-logo" />
-          <span className="">Archive</span>
+          <span className="hidden md:block">Archive</span>
         </NavLink>
         <NavLink to="/trash" className="">
           <BsTrash className="fill-logo" />
-          <span className="">Trash</span>
+          <span className="hidden md:block">Trash</span>
         </NavLink>
       </section>
     </article>
