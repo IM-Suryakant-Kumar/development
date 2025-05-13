@@ -9,7 +9,7 @@ export const HostLayout = () => {
 		<>
 			<Navbar />
 			<Sidebar />
-			<article className="py-15 md:pb-0">
+			<article className="my-15 md:mb-0 md:ml-60">
 				<Outlet />
 			</article>
 		</>

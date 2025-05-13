@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 export const Navbar = () => {
 	return (
-		<article className="bg-secondary w-full h-15 fixed top-0 flex items-center">
+		<article className="bg-secondary w-full h-15 fixed top-0 flex items-center border-b border-gray-300">
 			<section className="wrapper">
 				<article className="flex justify-between items-center gap-2">
 					<Link className="flex items-center" to="/note">
