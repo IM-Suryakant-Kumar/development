@@ -19,16 +19,21 @@
 	body {
 		@apply bg-primary;
 	}
-
-  a.active {
-    @apply border border-logo;
-  }
 }
 
 @layer components {
-  .wrapper {
-    @apply w-[95%] md:w-[90%] mx-auto; 
-  }
+	.wrapper {
+		@apply w-[95%] md:w-[90%] mx-auto;
+	}
+
+	.link {
+		@apply fill-logo text-logo;
+	}
+
+	.link.active,
+	.link:hover {
+		@apply border-2 border-logo rounded-full md:bg-logo md:fill-primary md:text-primary;
+	}
 }
 
 @layer utilities {
