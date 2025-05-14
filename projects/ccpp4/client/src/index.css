@@ -32,7 +32,7 @@
 
 	.link.active,
 	.link:hover {
-		@apply border-2 border-logo rounded-full md:bg-logo md:fill-primary md:text-primary;
+		@apply ring-2 ring-logo rounded-full md:bg-logo md:fill-primary md:text-primary;
 	}
 }
 

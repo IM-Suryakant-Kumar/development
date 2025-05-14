@@ -1,35 +1,34 @@
-
-import { createBrowserRouter, RouterProvider } from 'react-router'
-import { AuthLayout, HostLayout, Layout } from './components'
-import { Archive, Landing, Login, Note, NotFound, Signup, Trash } from './pages'
+import { createBrowserRouter, RouterProvider } from "react-router";
+import { AuthLayout, HostLayout, Layout } from "./components";
+import { Archive, Landing, Login, Note, Signup, Trash, NotFound } from "./pages";
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      Component: Layout,
-      children: [
-        { path: "/", Component: Landing },
-        {
-          Component: HostLayout,
-          children: [
-            { path: "note", Component: Note },
-            { path: "archive", Component: Archive },
-            { path: "trash", Component: Trash },
-          ]
-        },
-        {
-          Component: AuthLayout,
-          children: [
-            { path: "login", Component: Login },
-            { path: "signup", Component: Signup },
-          ]
-        },
-        { path: "*", Component: NotFound },
-      ]
-    }
-  ])
+	const router = createBrowserRouter([
+		{
+			Component: Layout,
+			children: [
+				{ path: "/", Component: Landing },
+				{
+					Component: HostLayout,
+					children: [
+						{ path: "note", Component: Note },
+						{ path: "archive", Component: Archive },
+						{ path: "trash", Component: Trash },
+					],
+				},
+				{
+					Component: AuthLayout,
+					children: [
+						{ path: "login", Component: Login },
+						{ path: "signup", Component: Signup },
+					],
+				},
+				{ path: "*", Component: NotFound },
+			],
+		},
+	]);
 
-  return <RouterProvider router={router} />
+	return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
