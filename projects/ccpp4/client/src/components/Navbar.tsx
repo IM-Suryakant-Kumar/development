@@ -24,7 +24,7 @@ export const Navbar = () => {
 						</div>
 					</section>
 					<section className="flex items-center">
-						<MdOutlineLogout className="w-7 md:w-8 h-7 md:h-8 fill-logo cursor-pointer" />
+						<MdOutlineLogout className="w-7 md:w-8 h-7 md:h-8 fill-logo" />
 					</section>
 				</article>
 			</section>
