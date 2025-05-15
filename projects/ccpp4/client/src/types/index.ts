@@ -12,5 +12,5 @@ export interface INote {
 	title: string;
 	content: string;
 	background: string;
-	label: string[];
+	labels: string[];
 }

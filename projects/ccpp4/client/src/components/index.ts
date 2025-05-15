@@ -5,6 +5,8 @@ export * from "./Navbar";
 export * from "./Sidebar";
 export * from "./AddNote";
 export * from "./NoteModal";
+export * from "./Editor";
+export * from "./QlEditor";
 export * from "./Filters";
 export * from "./Notes";
 export * from "./Note";

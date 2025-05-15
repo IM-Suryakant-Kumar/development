@@ -3,7 +3,7 @@ import { INote } from "../types";
 
 const noteSchema = new Schema<INote>(
 	{
-    author: {type: Schema.Types.ObjectId, ref: "User"},
+		author: { type: Schema.Types.ObjectId, ref: "User" },
 		title: {
 			type: String,
 			required: [true, "Please provide title"],
@@ -11,7 +11,7 @@ const noteSchema = new Schema<INote>(
 		},
 		content: { type: String },
 		background: { type: String },
-		label: { type: String },
+		label: [{ type: String }],
 	},
 	{ timestamps: true }
 );

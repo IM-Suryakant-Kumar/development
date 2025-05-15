@@ -19,6 +19,10 @@
 	body {
 		@apply bg-primary;
 	}
+
+	.ql-editor {
+		min-height: 5rem !important;
+	}
 }
 
 @layer components {
@@ -33,6 +37,14 @@
 	.link.active,
 	.link:hover {
 		@apply ring-2 ring-logo rounded-full md:bg-logo md:fill-primary md:text-primary;
+	}
+
+  .modal-color {
+    @apply w-5 h-5 ring ring-gray-400 cursor-pointer;
+  }
+
+	.modal-label {
+		@apply font-secondary font-bold text-xs text-gray-600 flex items-center gap-2;
 	}
 }
 
