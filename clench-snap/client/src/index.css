@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import "tailwindcss";
+
+@theme {
+	--color-primary: #ebf2fa;
+	--color-secondary: #ffffff;
+	--color-logo: #3a86ff;
+	--font-primary: "Josefin Sans", sans-serif;
+	--font-secondary: "Cinzel", serif;
+}
+
+@layer base {
+	*,
+	*::before,
+	*::after {
+		@apply font-primary text-gray-950;
+	}
+
+	body {
+		@apply bg-primary;
+	}
+}
+
+@layer components {
+	.wrapper {
+		@apply w-[95%] md:w-[90%] mx-auto;
+	}
+}
+
+@layer utilities {
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+
+	.no-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+}
