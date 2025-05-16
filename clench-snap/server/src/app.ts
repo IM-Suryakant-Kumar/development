@@ -8,6 +8,7 @@ import { connectDB } from "./db";
 
 const PORT = process.env.PORT;
 const MONGO_URI = process.env.MONGO_URI;
+
 const app = express();
 
 app.use(express.json());
