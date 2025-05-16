@@ -6,20 +6,20 @@ import morgan from "morgan";
 import { errorHandlerMiddleware, notFoundMiddleware } from "./middlewares";
 import { connectDB } from "./db";
 
-const app = express();
 const PORT = process.env.PORT;
+const MONGO_URI = process.env.MONGO_URI;
+const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
-app.use(cors());
+app.use(cors({ credentials: true }));
 app.use(morgan("dev"));
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 (async () => {
 	try {
-		await connectDB(process.env.MONGO_URL);
+		await connectDB(MONGO_URI);
 		app.listen(PORT, () =>
 			console.log(`App is running at http://localhost:${PORT}`)
 		);
