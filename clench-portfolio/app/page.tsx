@@ -1,5 +1,12 @@
 export default function Home() {
   return (
-    <div className="">Home</div>
+    <>
+    <Hero />
+    <About />
+    <Skills />
+    <Projects />
+    <Blogs />
+    <Contact />
+    </>
   );
 }

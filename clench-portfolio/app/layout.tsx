@@ -3,6 +3,7 @@ import { Cinzel, Josefin_Sans } from "next/font/google";
 import "./globals.css";
 import ThemeContextProvider from "@/contexts/ThemeContext";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const josefin = Josefin_Sans({
 	variable: "--font-primary",
@@ -40,11 +41,12 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${josefin.variable} ${cinzel.variable} font-primary antialiased bg-primary text-gray-600 dark:bg-secondary dark:text-primary`}
+				className={`${josefin.variable} ${cinzel.variable} font-primary antialiased bg-primary text-gray-600 dark:bg-secondary dark:text-primary mt-15 `}
 			>
 				<ThemeContextProvider>
 					<Header />
 					{children}
+          <Footer />
 				</ThemeContextProvider>
 			</body>
 		</html>
