@@ -1,9 +1,0 @@
-export { default as Landing } from "./Landing";
-export { default as Home } from "./Host/Home";
-export { default as Explore } from "./Host/Explore";
-export { default as Profile } from "./Host/Profile";
-export { default as Setting } from "./Host/Setting";
-export { default as Post } from "./Host/Post";
-export { default as Login } from "./Auth/Login";
-export { default as Signup } from "./Auth/Signup";
-export { default as NotFound } from "./NotFound";
