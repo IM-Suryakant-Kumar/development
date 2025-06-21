@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #ffffff;
+  --color-secondary: #000000;
+  --color-accent: #7a7575;
+  --font-josefin: 'Josefin Sans', sans-serif;
+  --font-cinzel: 'Cinzel', serif;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+	--color-primary: var(--color-primary);
+	--color-secondary: var(--color-secondary);
+	--font-josefin: var(--font-josefin);
+	--font-cinzel: var(--font-cinzel);
+}
+
+@layer base {
+	*,
+	*::before,
+	*::after {
+		font-family: var(--font-josefin);
+		scroll-behavior: smooth;
+	}
+
+  body {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+  }
+
+  html.dark body {
+    background: var(--color-secondary);
+    color: var(--color-primary);
+  }
+
+  input, button {
+    outline: none;
+    border: none;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+}
