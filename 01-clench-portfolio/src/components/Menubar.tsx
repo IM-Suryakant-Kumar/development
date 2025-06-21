@@ -36,7 +36,7 @@ const Menubar = () => {
 				{links.map(({ name, href }) => (
 					<li key={href}>
 						<a
-							className="block bg-secondary/10 hover:bg-secondary/80 text-secondary/80 hover:text-primary mt-1 px-2 py-0.5 leading-relaxed rounded-sm"
+							className="block bg-secondary/10 hover:bg-secondary/80 text-secondary/80 hover:text-primary mt-1 px-2 py-0.5 leading-relaxed rounded-sm ease-in-out duration-300"
 							href={href}
 						>
 							{name}
