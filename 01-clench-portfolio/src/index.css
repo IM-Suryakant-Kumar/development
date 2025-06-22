@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #ffffff;
-  --color-secondary: #000000;
-  --color-accent: #7a7575;
-  --font-josefin: 'Josefin Sans', sans-serif;
-  --font-cinzel: 'Cinzel', serif;
+	--color-primary: #ffffff;
+	--color-secondary: #000000;
+	--color-accent: #7a7575;
+	--font-josefin: "Josefin Sans", sans-serif;
+	--font-cinzel: "Cinzel", serif;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -25,24 +25,34 @@
 		scroll-behavior: smooth;
 	}
 
-  body {
-    background: var(--color-primary);
-    color: var(--color-secondary);
-  }
+	body {
+		background: var(--color-primary);
+		color: var(--color-secondary);
+	}
 
-  html.dark body {
-    background: var(--color-secondary);
-    color: var(--color-primary);
-  }
+	html.dark body {
+		background: var(--color-secondary);
+		color: var(--color-primary);
+	}
 
-  input, button {
-    outline: none;
-    border: none;
-  }
+	input,
+	button {
+		outline: none;
+		border: none;
+	}
+
+	article {
+		min-height: 100vh;
+		scroll-margin-top: 3.75em;
+	}
+
+	article:nth-child(odd) {
+    background-image: linear-gradient(to bottom right, #FDFCFB, #E2D1C3);
+	}
 }
 
 @layer utilities {
-  .scrollbar-hidden::-webkit-scrollbar {
-    display: none;
-  }
+	.scrollbar-hidden::-webkit-scrollbar {
+		display: none;
+	}
 }
