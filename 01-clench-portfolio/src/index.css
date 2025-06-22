@@ -1,58 +1,49 @@
 @import "tailwindcss";
 
-:root {
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
 	--color-primary: #ffffff;
 	--color-secondary: #000000;
-	--color-accent: #7a7575;
 	--font-josefin: "Josefin Sans", sans-serif;
 	--font-cinzel: "Cinzel", serif;
 }
 
-@custom-variant dark (&:where(.dark, .dark *));
-
-@theme {
-	--color-primary: var(--color-primary);
-	--color-secondary: var(--color-secondary);
-	--font-josefin: var(--font-josefin);
-	--font-cinzel: var(--font-cinzel);
-}
-
 @layer base {
+  html.dark {
+    --color-primary: #000000;
+    --color-secondary: #ffffff;
+  }
+
 	*,
 	*::before,
 	*::after {
-		font-family: var(--font-josefin);
-		scroll-behavior: smooth;
+		@apply font-josefin scroll-smooth;
 	}
 
-	body {
-		background: var(--color-primary);
-		color: var(--color-secondary);
+  body {
+		@apply bg-primary text-secondary;
 	}
 
-	html.dark body {
-		background: var(--color-secondary);
-		color: var(--color-primary);
-	}
 
 	input,
 	button {
-		outline: none;
-		border: none;
+		@apply outline-none;
 	}
 
 	article {
-		min-height: 100vh;
-		scroll-margin-top: 3.75em;
-	}
-
-	article:nth-child(odd) {
-    background-image: linear-gradient(to bottom right, #FDFCFB, #E2D1C3);
+		@apply min-h-screen scroll-mt-15 border-t border-b border-gray-200 p-4;
 	}
 }
 
 @layer utilities {
 	.scrollbar-hidden::-webkit-scrollbar {
 		display: none;
+	}
+}
+
+@layer components {
+	.title {
+		@apply text-2xl md:text-3xl font-semibold text-center mb-6;
 	}
 }

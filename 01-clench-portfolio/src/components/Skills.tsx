@@ -1,5 +1,21 @@
+import { skills } from "../utils";
+
 const Skills = () => {
-	return <article id="skills">Skills</article>;
+	return (
+		<article
+			id="skills"
+			className="p-4 flex flex-col justify-center items-center text-center gap-6"
+		>
+			<h2 className="title">Skills</h2>
+			<ul className="max-w-2xl mx-auto flex flex-wrap justify-center items-center gap-4 mt-6">
+				{skills.map((skill) => (
+					<li key={skill} className="text-gray-600 md:text-md font-semibold border-2 border-gray-300 rounded-full px-8 py-2">
+						{skill}
+					</li>
+				))}
+			</ul>
+		</article>
+	);
 };
 
 export default Skills;
