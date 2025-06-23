@@ -9,7 +9,7 @@ const Skills = () => {
 			<h2 className="title">Skills</h2>
 			<ul className="max-w-2xl mx-auto flex flex-wrap justify-center items-center gap-4 mt-6">
 				{skills.map((skill) => (
-					<li key={skill} className="text-gray-600 md:text-md font-semibold border-2 border-gray-300 rounded-full px-8 py-2">
+					<li key={skill} className="bg-gray-200 text-gray-600 md:text-md font-semibold border-2 border-gray-300 rounded-md px-8 py-2">
 						{skill}
 					</li>
 				))}
