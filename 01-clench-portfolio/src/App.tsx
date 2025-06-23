@@ -6,7 +6,6 @@ import {
 	Header,
 	Hero,
 	Projects,
-	ScrollToTop,
 	Skills,
 } from "./components";
 
@@ -21,7 +20,6 @@ const App = () => {
 			<Blogs />
 			<Contact />
 			<Footer />
-			<ScrollToTop />
 		</>
 	);
 };

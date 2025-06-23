@@ -154,17 +154,17 @@ export const projects = [
 export const blogs = [
 	{
 		title: "WebScrapping Guide",
-		desc: "coming soon...",
+		des: "coming soon...",
 		link: "coming soon!",
 	},
 	{
 		title: "Promises to Async Await",
-		desc: "coming soon...",
+		des: "coming soon...",
 		link: "coming soon!",
 	},
 	{
 		title: "Automation Guide",
-		desc: "coming soon...",
+		des: "coming soon...",
 		link: "coming soon!",
 	},
 ];
