@@ -1,0 +1,73 @@
+header {
+	height: 4rem;
+	background: var(--secondary-color);
+	padding: 0 0.5em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: -1px -1px 2px 1px #333;
+	position: relative;
+	z-index: 5;
+}
+
+a > h1 {
+	font-size: x-large;
+	font-family: "Cinzel", serif;
+	color: var(--logo-color);
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+
+/* menubar */
+.menu-bar {
+	width: 1.8rem;
+	height: 1.8rem;
+	background: var(--logo-color);
+	border-radius: 0.2em;
+	box-shadow: 1px 1px 2px 1px #33333340, -1px -1px 2px 1px #33333340;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.25em;
+	position: relative;
+}
+
+.menu-bar > * {
+	width: 70%;
+	height: 0.15em;
+	background: var(--secondary-color);
+	transition: all 0.2s ease-in-out;
+}
+
+.menu-bar.active > * {
+	position: absolute;
+	top: calc(100% / 2);
+}
+
+.menu-bar.active > .top {
+	transform: rotate(135deg);
+}
+
+.menu-bar.active > .middle {
+	transform: rotate(calc(360deg * 4));
+	opacity: 0;
+}
+
+.menu-bar.active > .bottom {
+	transform: rotate(-135deg);
+}
+
+@media screen and (min-width: 768px) {
+	header {
+		padding: 0 1em;
+	}
+
+	.menu-bar {
+		display: none;
+	}
+}

@@ -1,0 +1,6 @@
+.filled-star{
+    color: rgb(255, 180, 0);
+}
+.unfilled-star{
+    color: var(--light-background);
+}

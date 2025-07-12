@@ -1,0 +1,157 @@
+
+
+/* vertical card */
+.card-vertical{
+    display: flex;
+    flex-direction: column;
+    max-width: 14rem;
+    width: 100%;
+    background-color: var(--font-primary-colorr);
+    cursor: pointer;
+    box-shadow: 8px 6px 8px #888888;
+    position: relative;
+    color: var(--dark-text);
+}
+.res-img-vertical{
+    width: 100%;
+    max-width: 16rem;
+    height: 15rem;
+    object-fit: cover;
+  }
+.text-container{
+    padding: 0 0.5rem;
+}
+.title-wishlist{
+    display: flex;
+    justify-content: space-between;  
+}
+.text-container-title{
+    font-weight: bold;
+    color: var(--dark-text)
+}
+.text-container-wishlist{
+    color:var(--light-background);
+}
+.text-container-desc{
+    font-weight: 500;
+    font-size: 0.7rem;
+   
+}
+.price{
+    display: flex;
+   
+}
+.price div{
+    padding: 0 0.2rem;
+}
+.sale-price{
+    font-weight: bold;
+}
+.mrp-price{
+    font-weight: bold;
+    color: var(--light-background);
+    text-decoration: line-through;
+}
+.discount{
+    color:var(--success-color);
+    font-weight: 500;
+}
+.product-btn{
+    margin: 0.5rem 1.2rem;
+    width: 80%;
+}
+/* card with badge */
+.card-badge{
+    background-color: var(--dark-orange);
+    position: absolute;
+    top: 2%;
+    left: 0;
+    color: var(--font-primary-color);
+    font-weight: 540;
+}
+
+
+/* horizontal card */
+
+.card-horizontal{
+    display: flex;
+    background-color: var(--lg-color);
+    box-shadow: 6px 6px 8px #888888;
+    color : var(--dark-text)
+}
+.res-img-small{
+    width: 100%;
+    max-width: 15rem;
+    height: 10rem;
+    object-fit: cover;
+    padding: 0 1rem;
+}
+.text-container{
+    max-width: 18rem;
+}
+.cta-container{
+    display: flex;
+}
+.cta-container *{
+    margin: 0.4rem;
+}
+.cta-container .right{
+    margin-left: auto;
+}
+
+/* card with text overlay */
+.card-with-overlay{
+   position: relative;
+   border-radius: 5px;
+   background-color: var(--lg-color);
+   max-width: 300px;
+   display: flex;
+   flex-direction: column;
+   box-sizing: border-box;
+   box-shadow: 6px 6px 8px #888888;
+  
+  }
+  .card-title{
+    margin-top:15px;
+    padding: 0 1rem 8px;
+    color: var(--body-background);
+    position: absolute;
+    font-weight: bold;
+  }
+  .card-desc{
+    line-height: 1.25rem;
+    font-weight: 600;
+    padding: 1rem 8px 1rem;
+    font-size: 0.875rem;
+    color: rgba(0,0,0,.74);
+   
+  }
+
+  /* card with text only */
+.card-with-textonly{
+     display: flex;
+     flex-direction: column;
+     border-radius: 5px;
+     box-shadow: 6px 6px 8px #888888;
+     padding: 0.2rem;
+     max-width: 300px;
+     color : var(--dark-text);
+  }
+.card-with-textonly .title{
+      font-weight: bolder;
+      
+      
+  }
+  .card-with-textonly .subtitle{
+    color:var(--light-background);
+    font-size: 10px;
+}
+.card-with-textonly .desc{
+    font-weight: 500;
+    padding-top: 0.5rem;
+}
+
+/* card with dismiss */
+.card-dismiss{
+    margin-left: auto;
+}

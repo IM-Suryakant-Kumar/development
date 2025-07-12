@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("/src/styles/root.css");
+@import url("/src/styles/header.css");
+@import url("/src/styles/aside.css");
+@import url("/src/styles/main-section.css");
+@import url("/src/styles/footer.css");
+
+.star {
+	color: rgb(244, 71, 8);
+}
+
+.badge-rating {
+	width: 3.5rem;
+	height: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  gap: 0.2em;
+	background: var(--logo-color);
+	color: var(--primary-color);
+  border-radius: 0.25em;
+}
+
+.badge-star {
+  font-size: larger;
+}

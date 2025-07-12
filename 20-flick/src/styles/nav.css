@@ -1,0 +1,40 @@
+.navbars{
+    background-color: var(--offwhite);   
+}
+.brand-name{
+    font-family: var(--brand);
+    color: var(--primary);
+}
+/* search */
+.search-form{
+    background-color: white;
+}
+.search{
+    padding: 0.5rem;
+    outline: none;
+    border: none;
+}
+.search-icon{
+    vertical-align: middle;
+    padding: 0.3rem;
+}
+.search-icon:hover{
+    background-color: var(--primary);
+    color: white;
+}
+.auth-btn{
+    background-color: transparent;
+    margin:0 0.5rem;
+    padding: 0 0.5rem;
+    color: var(--primary);
+}
+.auth-btn:hover{
+    color: var(--accent);
+}
+@media (min-width: 768px) {
+    .navbars{
+        position: fixed;
+        z-index: 3;
+        width: 100%;
+    }
+}

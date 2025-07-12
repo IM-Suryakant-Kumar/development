@@ -1,0 +1,21 @@
+{
+    "name": "Stay Fit Extension",
+    "description": "Reminding user to move body joints and hydrated themself",
+    "version": "1.0",
+    "manifest_version": 2,
+    "permissions": ["alarms", "notifications", "storage"],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "browser_action": {
+      "default_title": "Stay Healthy",
+      "default_popup": "popup.html"
+    },
+    "icons":{
+        "128":"icon128.png",
+        "32":"icon32.png",
+        "16":"icon16.png"
+
+    }
+  }

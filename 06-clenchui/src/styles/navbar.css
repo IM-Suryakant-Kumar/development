@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0");
+@import url("/src/styles/root.css");
+@import url("/src/styles/header.css");
+@import url("/src/styles/aside.css");
+@import url("/src/styles/main-section.css");
+@import url("/src/styles/footer.css");
+
+.header, .login-header {
+	box-shadow: none;
+	width: 100%;
+}
+
+.header > h2 {
+	width: 2rem;
+	height: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: xx-large;
+	font-weight: bold;
+	color: var(--logo-color);
+	border: 2px solid var(--logo-color);
+	border-radius: 0.2em;
+}
+
+.header > nav {
+	display: flex;
+	gap: 1em;
+}
+
+.header > nav > a {
+	font-weight: bold;
+	color: var(--logo-color);
+}
+
+.login-header > h2 {
+  font-size: x-large;
+  font-family: var(--font-cinzel);
+  color: var(--logo-color);
+}
+
+.login-header > button {
+  border: none;
+  outline: none;
+  font-weight: bold;
+  padding: 0.4em 1.5em;
+  background: var(--logo-color);
+  color: var(--primary-color);
+  border-radius: 0.25em;
+}

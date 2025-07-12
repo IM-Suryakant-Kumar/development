@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --default-color: white;
+  --color-primary: #ff8a8a5d;
+  --dark: black;
+  --color-primary-dark:#ff8a8af6;
+}
+body,
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--default-color);
+}
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://source.unsplash.com/random/?nature,mountain,tree,city,ocean) #d1d1d1;
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+.App {
+  flex-direction: column;
+}
+.font-xxl {
+  font-size: 7rem;
+}
+.font-xl {
+  font-size: 4rem;
+}
+.font-lg {
+  font-size: 3rem;
+}
+.font-md {
+  font-size: 2.5rem;
+}
+.font-sm {
+  font-size: 2rem;
+}
+.font-xs {
+  font-size: 1.5rem;
+}
+.font-xxs{
+  font-size:1.1rem;
+}

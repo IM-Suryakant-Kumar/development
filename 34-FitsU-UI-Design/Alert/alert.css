@@ -1,0 +1,64 @@
+
+:root{
+    --success-color:#04AA6D;
+    --error-color:#f44336;
+    --info-color:#2196F3;
+    --warn-color:#ff9800;
+    --success-lg-color:#d1e7dd;
+    --error-lg-color:#f8d7da;
+    --info-lg-color:#cfe2ff;
+    --warn-lg-color:#fff3cd;
+    --success-font-color:#0f5132;
+    --error-font-color:#842029;
+    --info-font-color:#084298;
+    --warn-font-color:#664d03;
+}
+.alert{
+    margin:0.5rem;
+    padding: 1rem;
+    width:600px;
+    border-radius: 0.5rem;
+    display: flex;
+  align-items: center;
+
+}
+.info{
+    background-color: var(--info-color);
+}
+.success{
+    background-color: var(--success-color);
+}
+.error{
+    background-color: var(--error-color);
+}
+.warn{
+    background-color: var(--warn-color);
+}
+.dismiss{
+    margin-left: auto;
+    cursor: pointer;
+}
+/* i{
+    margin-right:1rem;
+} */
+.success-lg{
+    background-color: var(--success-lg-color);
+    color:var(--success-font-color);
+   
+}
+.error-lg{
+    background-color: var(--error-lg-color);
+    color:var(--error-font-color)
+}
+.warn-lg{
+    background-color: var(--warn-lg-color);
+    color:var(--warn-font-color)
+}
+.info-lg{
+    background-color: var(--info-lg-color);
+    color:var(--info-font-color)
+}
+
+.component-display{
+    flex-direction: column;
+}

@@ -1,0 +1,66 @@
+main {
+	min-height: 100vh;
+	width: 90%;
+	margin: 1em auto;
+}
+
+main > section > h2 {
+	font-size: large;
+}
+
+main > section > p {
+	padding: 0.5em 0 0.5em 0.5em;
+	color: gray;
+}
+
+.design {
+	box-shadow: 1px 1px 2px 1px #29292920, -1px -1px 2px 1px #29292920;
+	padding: 1em;
+	margin: 1em;
+	border-radius: 0.25em;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em;
+	justify-content: center;
+	align-items: center;
+}
+
+.code {
+	overflow: auto;
+	margin: 2em 1em;
+	text-align: center;
+}
+
+.code > iframe {
+	width: 100%;
+	max-width: 30rem;
+	transform: scale(1);
+	overflow: hidden;
+	border: 0;
+}
+
+@media screen and (min-width: 768px) {
+	main {
+		width: calc(100% - 15rem);
+		margin: calc(-100vh - 6em) 0 2em 15em;
+	}
+
+	main > section {
+		padding-left: 1em;
+	}
+
+	main > section > h2 {
+		font-size: x-large;
+	}
+
+	main > section > p {
+		font-size: larger;
+		padding: 1em 0 0.5em 1em;
+	}
+
+	.design,
+	.code {
+		width: 80%;
+		margin: 2em auto;
+	}
+}

@@ -1,0 +1,32 @@
+@import url("/src/styles/root.css");
+@import url("/src/styles/header.css");
+@import url("/src/styles/aside.css");
+@import url("/src/styles/main-section.css");
+@import url("/src/styles/footer.css");
+
+.spaced {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25em;
+  flex-wrap: wrap;
+}
+
+.stacked > li > a,
+.spaced > li > a {
+	display: inline-block;
+	width: 6rem;
+	padding: 0.4em 1em;
+	margin-top: 0.25em;
+	text-align: center;
+	background: var(--logo-color);
+	color: var(--primary-color);
+	border-radius: 0.25em;
+}
+
+.stacked > li > a:hover,
+.spaced > li > a:hover {
+	border: 2px solid var(--logo-color);
+	background: var(--primary-color);
+	color: var(--logo-color);
+}

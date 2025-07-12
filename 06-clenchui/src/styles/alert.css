@@ -1,0 +1,58 @@
+@import url("/src/styles/root.css");
+@import url("/src/styles/header.css");
+@import url("/src/styles/aside.css");
+@import url("/src/styles/main-section.css");
+@import url("/src/styles/footer.css");
+
+.alert {
+	background: #c31eff;
+	color: var(--primary-color);
+	width: 100%;
+	border-radius: 0.25em;
+	padding: 0.4em 1em;
+	display: flex;
+	gap: 1em;
+	align-items: center;
+	transition: all 0.2s ease-in-out;
+	font-size: medium;
+}
+
+.alert > .icon {
+	width: 1.5rem;
+	height: 1.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.success {
+	background: #26ff00;
+}
+
+.success > .icon {
+	width: 1rem;
+	height: 1rem;
+	border: 2px solid var(--primary-color);
+	border-radius: 50%;
+	font-size: 0.75rem;
+	font-weight: bold;
+}
+
+.error {
+	background: #ff1e1e;
+}
+
+.warning {
+	background: #ff9e1e;
+}
+
+.error > .icon,
+.warning > .icon {
+	font-size: 1.2rem;
+}
+
+.remove-btn {
+	margin-left: auto;
+	font-weight: bold;
+	cursor: pointer;
+}

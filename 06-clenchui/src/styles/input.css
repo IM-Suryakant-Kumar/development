@@ -1,0 +1,28 @@
+@import url("/src/styles/root.css");
+@import url("/src/styles/header.css");
+@import url("/src/styles/aside.css");
+@import url("/src/styles/main-section.css");
+@import url("/src/styles/footer.css");
+
+.validation-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.validation-form > input {
+	border: none;
+	outline: none;
+	padding: 0.625em 1em;
+	border: 1px solid var(--logo-color);
+	border-radius: 0.25em;
+}
+.validation-form > button {
+	background: var(--logo-color);
+	color: var(--primary-color);
+	border: none;
+	padding: 0.625em 2em;
+	border-radius: 0.25em;
+  cursor: pointer;
+}

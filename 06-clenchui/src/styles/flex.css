@@ -1,0 +1,30 @@
+@import url("/src/styles/root.css");
+@import url("/src/styles/header.css");
+@import url("/src/styles/aside.css");
+@import url("/src/styles/main-section.css");
+@import url("/src/styles/footer.css");
+
+.flex-cont {
+  display: flex;
+  gap: 1em;
+}
+
+.flex-cont > * {
+  background: var(--logo-color);
+  color: var(--primary-color);
+  padding: 0.4em 1.5em;
+}
+
+.flex-cont.vertical {
+  flex-direction: column;
+}
+
+.flex-centered {
+  width: 10rem;
+  height: 10rem;
+  background: var(--logo-color);
+  color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,44 @@
+.modal{
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    z-index: 1;
+    top:0;
+    left:0;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.modal-body{
+    background-color: white;
+    border: 1px solid var(--primary-color);
+    border-radius: 0.3rem;
+    color:black;
+    padding: 1rem 2rem;
+    width: 50%;
+    margin: 10% auto;
+    display: flex;
+    flex-direction: column;
+}
+.cross{
+    margin-left: auto;
+    color:#525658;
+}
+.cross:hover,.close:focus{
+    color:black;
+    cursor: pointer;
+}
+.modal-title{
+    font-weight: bolder;
+    padding:1rem 0;
+}
+.buttons-div{
+    margin-left: auto;
+}
+.secondary-btn{
+    background-color: var(--secondary-color);
+}
+.secondary-btn:hover{
+    background-color: #525658;
+}

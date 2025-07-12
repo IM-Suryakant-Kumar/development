@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@import url("/src/styles/root.css");
+@import url("/src/styles/header.css");
+@import url("/src/styles/aside.css");
+@import url("/src/styles/main-section.css");
+@import url("/src/styles/footer.css");
+
+.avatar-badge {
+	cursor: pointer;
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	border: 3px solid var(--logo-color);
+	border-radius: 50%;
+	position: relative;
+}
+
+.avatar-badge > img {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	border-radius: 50%;
+}
+
+.avatar-badge > span {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 1rem;
+	height: 1rem;
+	background: var(--logo-color);
+	border-radius: 50%;
+	border: 2px solid var(--primary-color);
+}
+
+.avatar-badge > .online {
+	background: #02d702;
+}
+
+.avatar-badge > .offline {
+	background: gray;
+}
+
+.icon-badge {
+	cursor: pointer;
+	position: relative;
+}
+
+.icon-badge > *:first-child {
+	font-size: 2rem;
+}
+
+.icon-badge > span:last-child {
+	background: red;
+	color: var(--primary-color);
+	width: 1.3rem;
+	height: 1.3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+  border: 2px solid var(--primary-color);
+	position: absolute;
+	top: -0.4em;
+	right: -0.4em;
+}
+
+.icon-badge > span.secondary {
+	background: #02d702;
+}
+
+.icon-badge > span.logo {
+	background: var(--logo-color);
+}

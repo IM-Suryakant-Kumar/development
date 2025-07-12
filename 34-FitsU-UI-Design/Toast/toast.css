@@ -1,0 +1,39 @@
+.toast{
+    background-color: rgb(65, 64, 64);
+    border: 1px solid var(--secondary-color);
+    /* border-left: 15px solid var(--primary-color); */
+    border-radius: 0.3rem;
+    color:var(--font-primary-color);
+    margin-left: 1px;
+    padding: 1rem;
+    position: fixed;
+    z-index: 1;
+    right:1%;
+    bottom:3%;
+    font-weight: bolder;
+    visibility: hidden;
+}
+.toast-here{
+    background-color: rgb(65, 64, 64);
+    border-radius: 0.3rem;
+    color:var(--font-primary-color);
+    margin-left: 1px;
+    padding: 1rem;
+    font-weight: bolder;
+}
+.show{
+    visibility: visible;
+    animation: fade-in 1s;
+   
+}
+@keyframes fade-in{
+    from{
+        right:0px;
+        opacity: 0;
+    }
+    to{
+        right: 1%;
+        opacity: 1;
+    }
+}
+

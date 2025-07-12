@@ -1,0 +1,137 @@
+@import './tailwind.css';
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Oleo+Script+Swash+Caps&display=swap');
+.App{
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #F7F7F7;
+    font-family: 'Fira Sans', sans-serif
+}
+main{
+    flex-grow: 1;
+}
+/* navbar */
+.app-navbar-logo{
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-size: 1.5rem;
+    color: var(--primary);
+    transition: color ease 0.35s;
+    position: sticky;
+}
+.app-navbar-logo:hover{
+    color: var(--accent);
+    text-decoration: none;
+}
+.app-logo{
+    font-family: 'Oleo Script Swash Caps', cursive;
+}
+.app-container{
+    width: 95%;
+    max-width: 1024px;
+    margin: auto;
+}
+.link{
+    padding: 0.25rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.link:hover{   
+    background-color: #d1e3ca;
+    color: white;
+}
+.link.active{
+    color: #fdba74;
+    background-color: #ffedd5;
+}
+.default{
+    border-color: #e2e8f0;
+}
+/* tagline container */
+@media screen and (max-width:767px) {
+    .tag-container{
+        min-height: 20rem;
+    }
+}
+/* inputs */
+input, textarea{
+    border-radius: 0.5rem;
+    border: 1px solid #ccc; 
+    padding: 0.5rem;
+}
+input:focus, textarea:focus, select:focus{
+    border: none;
+    outline: 1.5px solid #fdba74;
+}
+.input-group{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin-bottom: 2rem;
+    column-gap: 0.5rem;
+    -webkit-box-align: center;
+    align-items: center;
+}
+/* post */
+.addpost{
+    position: absolute;
+    border: 1px solid #ffedd5;
+    border-radius: 8px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding: 1rem;
+}
+/* upload img */
+.upload-blur{
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    width: 5rem;
+    height: 5rem;
+    top:9.2rem;   
+    border-radius: 50%;
+    z-index: 1;
+}
+.upload-spinner{
+    position:absolute;
+    top: 44%;
+    right: 44%;
+    z-index: 2;
+    color: white;   
+}
+/* modal backdrop */
+.modal_backdrop{
+    background: rgba(0,0,0,0.85);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    z-index: 1;        
+}
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 0.7rem;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px #f9f5ff;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #ffedd5;
+    cursor: pointer;
+}
+/* animation */
+.loading-icon{
+    animation: rotating 2s linear infinite;
+}
+@keyframes rotating {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

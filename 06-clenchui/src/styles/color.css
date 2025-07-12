@@ -1,0 +1,65 @@
+@import url("/src/styles/root.css");
+@import url("/src/styles/header.css");
+@import url("/src/styles/aside.css");
+@import url("/src/styles/main-section.css");
+@import url("/src/styles/footer.css");
+@import url("/src/styles/grid.css");
+
+.grid > .content {
+	color: var(--primary-color);
+}
+
+.auto-fill {
+	grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr)) !important;
+}
+
+.ebf2fa {
+	background: #ebf2fa !important;
+	color: #000 !important;
+}
+
+.cae9ff {
+	background: #cae9ff !important;
+	color: #000 !important;
+}
+
+.c008bf8 {
+	background: #008bf8 !important;
+}
+
+.c4CAF50 {
+	background: #4caf50 !important;
+}
+
+.FF9800 {
+	background: #ff9800 !important;
+}
+
+.F44336 {
+	background: #f44336 !important;
+}
+
+.ffe4e6 {
+	background: #ffe4e6 !important;
+	color: #000 !important;
+}
+
+.fb7185 {
+	background: #fb7185 !important;
+}
+
+.f43f5e {
+	background: #f43f5e !important;
+}
+
+.c34d399 {
+	background: #34d399 !important;
+}
+
+.c10b981 {
+	background: #10b981 !important;
+}
+
+.b7320e {
+	background: #b7320e !important;
+}

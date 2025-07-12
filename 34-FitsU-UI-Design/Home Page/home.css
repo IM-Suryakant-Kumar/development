@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300&display=swap');
+@import url('../styles.css');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a{
+    color:var(--secondary-color);
+    font-weight: 600;
+}
+li{
+    list-style: none;
+}
+header{
+    background-color: var(--bg-color);
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+  
+}
+/* theme */
+.theme{
+    cursor: pointer;
+    position: fixed;
+    top: 80px;
+    right: 30px;
+    z-index: 5;
+}
+.list1 a:hover ,.list2 a:hover{
+    font-weight: bolder;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 0 30px 30px 5px;
+    padding: 0.5rem 5rem 0.5rem 0.8rem;
+    transition: all 0.3s ease 0s;
+}
+.active-tab{
+    font-weight: bolder;
+    border-left: 5px solid var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    border-radius: 0 30px 30px 5px;
+    padding: 0.5rem 5rem 0.5rem 0.8rem;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    gap:2rem;
+    font-weight: bold;
+}
+.nav-left li a{
+    color: var(--font-primary-color);
+}
+.brand{
+    cursor: pointer;
+    font-style: italic;
+    color:var(--font-primary-color);
+    font-weight: bolder;
+}
+.icon-light{
+    color: var(--font-primary-color);
+}
+.nav-left{
+    display:flex;
+    gap:2rem; 
+}
+.nav-left li a{
+    transition: all 0.3s ease 0s;
+}
+.nav-right{
+    margin-right: 4rem;
+}
+.btn{
+    padding: 9px 20px;
+    border-radius: 0.5rem ;
+    background-color: var(--primary-btn-color);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;;
+    font-weight: bold;
+    color: var(--font-primary-color);
+  
+}
+button:hover{
+    background-color: var(--primary-hover);
+}
+
+
+/* side bar */
+
+.main-container{
+    display: flex;
+    /* gap:4rem; */
+    padding: 5rem;
+}
+
+.side-content{
+    display: flex;
+    flex-direction: column;
+    gap:3rem;
+    width: 20%;
+}
+
+.side-title{
+    margin-bottom:1rem;
+    font-weight: 700;
+}
+.side-sublist li {
+    margin-bottom:1rem;
+   font-weight: bold;
+}
+
+/* hamburger */
+.menu-btn{
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 8px;
+    z-index: 5;
+    display: none;
+    color :  var(--light-color);
+}
+
+/* main content */
+.main-content{
+    flex-grow: 1; 
+    flex-shrink: 1;
+    margin: 0 2rem;
+    width: 80%;
+
+}
+.main-content-title{
+    margin-bottom:1rem;
+    font-weight: bolder;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.main-content-subtitle{
+    margin-top: 1rem;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.component-display{
+    background-color: var(--font-primary-color);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* width: 50rem; */
+}
+.component-code{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.to-navigate{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10rem;
+}
+.navigate{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+}
+.copyright {
+    font-size: 0.7rem;
+}
+.center{
+    text-align: center;
+    margin: auto;
+}
+
+@media(max-width:1000px){
+    .main-container{
+        padding: 6rem 0 0 0 ;
+    
+    }
+    .side-content{
+        display: none;
+    }
+    .menu-btn{
+        display: block;
+    }
+    a{
+        color : var(--dark-text)
+    }
+    .side-content-mobile{
+        display: block;
+        position: fixed;
+        top:40px;
+        left:0;
+        background: var(--font-primary-color);
+        overflow-y: auto;
+        width: 60%;
+        height: 100%;
+        padding: 30px;
+        transform: translateX(-500px);
+        border-right: 1px solid var(--secondary-color) ;
+  
+        
+    }
+    .show{
+        transform: translateX(-20px);  
+    }
+    .side-sublist li {
+        margin-bottom:1.5rem;
+       font-weight: bolder;
+    }
+    .side-sub-title{
+        margin-bottom:1.5rem;
+    }
+    .brand{
+        visibility: hidden;
+    }
+    .side-title{
+        color : var(--dark-text);
+    }
+}
+@media(max-width:560px){
+    .active-tab{
+        border-bottom: none;
+    }
+    .side-content-mobile{
+        width: 70%;
+    }
+
+}

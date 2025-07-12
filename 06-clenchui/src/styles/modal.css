@@ -1,0 +1,67 @@
+@import url("/src/styles/root.css");
+@import url("/src/styles/header.css");
+@import url("/src/styles/aside.css");
+@import url("/src/styles/main-section.css");
+@import url("/src/styles/footer.css");
+
+.show-mdl-btn {
+	border: none;
+	outline: none;
+	background: var(--logo-color);
+	color: var(--primary-color);
+	padding: 0.6em 1.25em;
+	border-radius: 0.25em;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.modal {
+	background: #00000020;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-card {
+	background: var(--primary-color);
+	width: 18rem;
+	height: 8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 1em;
+	padding: 1em;
+	border-radius: 0.4em;
+}
+
+.modal-card > h3 {
+	font-weight: bold;
+}
+
+.modal-card > .action-btn {
+	align-self: flex-end;
+}
+
+.modal-card > .action-btn > button {
+	border: none;
+	font-weight: bold;
+	margin-right: 0.25em;
+  padding: 0.3125em 1em;
+	color: var(--logo-color);
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+
+.modal-card > .action-btn > button:hover {
+	background: var(--secondary-color);
+}

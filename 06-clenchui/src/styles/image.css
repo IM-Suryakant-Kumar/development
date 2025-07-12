@@ -1,0 +1,26 @@
+@import url("/src/styles/root.css");
+@import url("/src/styles/header.css");
+@import url("/src/styles/aside.css");
+@import url("/src/styles/main-section.css");
+@import url("/src/styles/footer.css");
+
+.rounded-img,
+.square-img {
+	width: 5rem;
+	height: 5rem;
+	object-fit: cover;
+	box-shadow: 1px 1px 2px 1px #00000020, -1px -1px 2px 1px #00000020;
+}
+
+.rounded-img {
+	border-radius: 50%;
+}
+
+.square-img {
+	border-radius: 0.25em;
+}
+
+.responsive-img {
+	width: 100%;
+	box-shadow: 1px 1px 2px 1px #00000020, -1px -1px 2px 1px #00000020;
+}

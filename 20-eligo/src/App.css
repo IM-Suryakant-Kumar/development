@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+body{
+  font-family: 'Nunito', sans-serif !important;
+}
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main{
+  flex-grow: 1;
+}
+/***search*****/
+input:focus{
+  /* outline: chartreuse solid 1px; */
+  /* outline: rgb(5,5,5) !important; */
+outline: #c48535 solid 1px !important;
+}
+/* search dialog */
+.search-container .MuiDialog-paperWidthSm{
+  background-color: #2d2d2d;
+  height: 20rem; 
+  width: 30rem;
+  
+}
+
+.MuiButton-label{
+  /* color: black !important; */
+  font-weight: 530 !important;
+}
+
+/******breadcrums**************/
+.MuiBreadcrumbs-separator{
+  font-size: 25px !important;
+}
+
+/****snackbar******/
+
+.MuiPaper-elevation4{
+  box-shadow: none !important;
+}
+
+.MuiSnackbarContent-root {
+  border: 1px solid #4caf50 !important;
+  background-color: #4caf50 !important;
+}
+.MuiPaper-elevation6{
+  box-shadow: none !important;
+}
+
+/*****packages*****/
+.MuiCardContent-root:last-child{
+  padding-bottom: 0 !important;
+}
+.MuiCardContent-root{
+  padding: 16px 16px 0 16px;
+}
+/********** dialog ******/
+.MuiPaper-root::-webkit-scrollbar {
+  display: none !important;
+}
+.dialogbox .MuiPaper-root {
+  /* background-color: #fcedbd !important; */
+  background-color:  #171717 ;
+}
+.listItem span{
+  font-size: 0.9rem !important;
+  color: #fcd34d !important;
+}
+
+/*****charts*******/
+.recharts-default-tooltip {
+  background-color:  rgba(0, 0, 0, 0.9) !important;
+  padding: 2px !important;
+  border: none !important;
+  color: white;
+}
+
+/****octicon******/
+.octicon-package{
+  vertical-align: middle !important;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px ;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  /* border-radius: 5px; */
+  background-color: #202020;
+  cursor: pointer;
+}

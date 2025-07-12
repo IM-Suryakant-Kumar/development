@@ -1,0 +1,32 @@
+@import url("/src/styles/root.css");
+@import url("/src/styles/header.css");
+@import url("/src/styles/aside.css");
+@import url("/src/styles/main-section.css");
+@import url("/src/styles/footer.css");
+
+.grid {
+	width: 100%;
+	display: grid;
+	gap: 1em;
+}
+
+.col-2 {
+	grid-template-columns: 1fr 1fr;
+}
+
+.col-3 {
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid.auto-fill {
+	grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+}
+
+.grid > .content {
+	background: var(--secondary-color);
+	height: 10rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: larger;
+}

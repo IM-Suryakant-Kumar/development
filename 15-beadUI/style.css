@@ -1,0 +1,35 @@
+@import url("./css/main.css");
+header {
+  grid-area: header;
+}
+.navbar {
+  background-color: var(--bg-color);
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items:center;
+}
+.last-col > ul > li {
+  padding: 0rem 0.6rem;
+}
+main {
+  min-height: 55vh;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: (2, 1fr);
+  grid-template-areas:
+    "section1 section1"
+    "section1 section1";
+}
+.main-section {
+  grid-area: section1;
+}
+.about {
+  max-width: 50rem;
+}
+
+footer {
+  min-height: 25vh;
+  color: var(--text-light);
+  margin-top: auto;
+}

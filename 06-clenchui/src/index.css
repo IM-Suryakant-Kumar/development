@@ -1,0 +1,94 @@
+@import url("/src/styles/root.css");
+@import url("/src/styles/header.css");
+@import url("/src/styles/footer.css");
+@import url("/src/styles/sidebar.css");
+
+main {
+	max-width: 700px;
+	margin: auto;
+	min-height: calc(100vh - 12em);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 0.5em;
+}
+
+section {
+	text-align: center;
+	line-height: 1.5em;
+}
+
+section > h1 {
+	font-size: larger;
+}
+
+section > p {
+	margin-top: 1em;
+	font-size: medium;
+}
+
+section > p > strong {
+	font-family: "Cinzel", serif;
+	font-weight: 800;
+}
+
+.links {
+	margin-top: 1em;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 1em;
+}
+
+.links > a {
+	width: 8rem;
+	height: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0.4em;
+	box-shadow: 1px 1px 1px 1px #33333340, -1px -1px 1px 1px #33333340;
+}
+
+.links > a:active {
+	box-shadow: none;
+}
+
+a.start {
+	background: var(--logo-color);
+	color: var(--primary-color);
+}
+
+a.doc {
+	border: 2px solid var(--logo-color);
+	color: var(--logo-color);
+}
+
+@media screen and (min-width: 768px) {
+	main {
+		max-width: 100%;
+		margin: 0;
+		overflow: auto;
+		background: fixed;
+	}
+
+	section > h1 {
+		font-size: x-large;
+	}
+
+	section > p {
+		margin-top: 1.3em;
+		font-size: large;
+	}
+
+	.links {
+		margin-top: 1.5em;
+		gap: 2.5em;
+	}
+
+	.links > a {
+		width: 10rem;
+		height: 2.3rem;
+		border-radius: 0.5;
+	}
+}

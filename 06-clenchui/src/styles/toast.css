@@ -1,0 +1,35 @@
+@import url("/src/styles/root.css");
+@import url("/src/styles/header.css");
+@import url("/src/styles/aside.css");
+@import url("/src/styles/main-section.css");
+@import url("/src/styles/footer.css");
+
+.show-toast {
+	border: none;
+	background: var(--logo-color);
+	color: var(--primary-color);
+	font-weight: bold;
+	width: 8rem;
+	height: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0.4em;
+	cursor: pointer;
+}
+
+.toast {
+	position: fixed;
+	top: 4em;
+	right: -100vw;
+	z-index: 10;
+	background: var(--logo-color);
+	color: var(--primary-color);
+	padding: 0.5em 2rem;
+	border-radius: 0.4em;
+  transition: all 1s ease-in-out;
+}
+
+.toast.show {
+  right: 0.5em;
+}

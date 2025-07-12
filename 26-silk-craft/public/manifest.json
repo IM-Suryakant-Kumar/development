@@ -1,0 +1,13 @@
+{
+  "short_name": "SilkCraft",
+  "name": "Create React App Sample",
+  "start_url": ".",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/images/optional/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+@import url("/src/styles/root.css");
+@import url("/src/styles/header.css");
+@import url("/src/styles/aside.css");
+@import url("/src/styles/main-section.css");
+@import url("/src/styles/footer.css");
+
+.primary,
+.secondary {
+	accent-color: var(--secondary-color);
+}
+
+.primary::-webkit-slider-runnable-track {
+	background: lightgreen;
+	border-radius: 0.25em;
+}
+
+.primary::-moz-range-track {
+	background: lightgreen;
+	border-radius: 0.25em;
+}
+
+.secondary::-webkit-slider-runnable-track {
+	background: lightsalmon;
+	border-radius: 0.25em;
+}
+
+.secondary::-moz-range-track {
+	background: lightsalmon;
+	border-radius: 0.25em;
+}
