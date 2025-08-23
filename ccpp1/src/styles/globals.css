@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #ffffff;
+  --secondary: #000000;
+  --logo: #ffa500;
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-logo: var(--logo);
+  --font-josefin: var(--font-josefin), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-cinzel: var(--font-cinzel), ui-serif, Georgia, Cambria, "Times New Roman", serif;
+}
+
+body {
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  font-family: var(--font-josefin);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-cinzel);
+}
+
+a {
+  color: var(--color-secondary);
+}
+
+a:hover {
+  color: var(--color-logo);
+}
+
+.cl-internal-1g0ikjj {
+  font-family: var(--font-cinzel);
+}
