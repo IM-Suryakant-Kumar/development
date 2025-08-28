@@ -2,46 +2,46 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-    provider = "postgresql"
-    url      = env("DATABASE_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  name      String
-  email     String   @unique
-  posts     Post[]
-  profile   Profile?
-  comments  Comment[]
-  likes     Like[]
-  followers Follower[] @relation("UserFollowers")
-  following Follower[] @relation("UserFollowing")
-}
-
-model Profile {
-  id        Int      @id @default(autoincrement())
-  bio       String?
-  avatarUrl String?
-  userId    Int      @unique
-  user      User     @relation(fields: [userId], references: [id])
+  id          String    @id
+  username    String    @unique
+  name        String?
+  surname     String?
+  cover       String?
+  avatar      String?
+  description String?
+  city        String?
+  school      String?
+  work        String?
+  website     String?
+  createdAt   DateTime  @default(now())
+  posts       Post[]
+  comments    Comment[]
+  likes       Like[]
+  saves       Save[]
+  followers   Follow[]  @relation("UserFollowers")
+  following   Follow[]  @relation("UserFollowing")
 }
 
 model Post {
-  id        Int      @id @default(autoincrement())
+  id        Int       @id @default(autoincrement())
   content   String
-  imageUrl  String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  authorId  Int
-  author    User     @relation(fields: [authorId], references: [id])
+  img       String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  authorId  String
+  author    User      @relation(fields: [authorId], references: [id])
   comments  Comment[]
   likes     Like[]
-
-  @@index([createdAt])
+  Save      Save[]
 }
 
 model Comment {
@@ -52,22 +52,36 @@ model Comment {
   userId    Int
   post      Post     @relation(fields: [postId], references: [id])
   user      User     @relation(fields: [userId], references: [id])
+
+  @@unique([postId, userId])
 }
 
 model Like {
-  id        Int      @id @default(autoincrement())
-  postId    Int
-  userId    Int
-  post      Post     @relation(fields: [postId], references: [id])
-  user      User     @relation(fields: [userId], references: [id])
+  id     Int  @id @default(autoincrement())
+  postId Int
+  userId Int
+  post   Post @relation(fields: [postId], references: [id])
+  user   User @relation(fields: [userId], references: [id])
+
+  @@unique([postId, userId])
 }
 
-model Follower {
-  id         Int  @id @default(autoincrement())
-  followerId Int
+model Save {
+  id     Int  @id @default(autoincrement())
+  postId Int
+  userId Int
+  post   Post @relation(fields: [postId], references: [id])
+  user   User @relation(fields: [userId], references: [id])
+
+  @@unique([postId, userId])
+}
+
+model Follow {
+  id          Int  @id @default(autoincrement())
+  followerId  Int
   followingId Int
-  follower   User @relation("UserFollowers", fields: [followerId], references: [id])
-  following  User @relation("UserFollowing", fields: [followingId], references: [id])
+  follower    User @relation("UserFollowers", fields: [followerId], references: [id])
+  following   User @relation("UserFollowing", fields: [followingId], references: [id])
 
   @@unique([followerId, followingId])
 }
