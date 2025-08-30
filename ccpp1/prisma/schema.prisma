@@ -11,24 +11,25 @@ datasource db {
 }
 
 model User {
-  id          String    @id
-  username    String    @unique
-  name        String?
-  surname     String?
-  cover       String?
-  avatar      String?
-  description String?
-  city        String?
-  school      String?
-  work        String?
-  website     String?
-  createdAt   DateTime  @default(now())
-  posts       Post[]
-  comments    Comment[]
-  likes       Like[]
-  saves       Save[]
-  followers   Follow[]  @relation("UserFollowers")
-  following   Follow[]  @relation("UserFollowing")
+  id        String    @id
+  name      String?
+  surname   String?
+  email     String    @unique
+  username  String    @unique
+  cover     String?
+  avatar    String?
+  bio       String?
+  city      String?
+  school    String?
+  work      String?
+  website   String?
+  createdAt DateTime  @default(now())
+  posts     Post[]
+  comments  Comment[]
+  likes     Like[]
+  saves     Save[]
+  followers Follow[]  @relation("UserFollowers")
+  following Follow[]  @relation("UserFollowing")
 }
 
 model Post {
@@ -41,7 +42,7 @@ model Post {
   author    User      @relation(fields: [authorId], references: [id])
   comments  Comment[]
   likes     Like[]
-  Save      Save[]
+  saves     Save[]
 }
 
 model Comment {
@@ -49,39 +50,37 @@ model Comment {
   content   String
   createdAt DateTime @default(now())
   postId    Int
-  userId    Int
+  authorId  String
   post      Post     @relation(fields: [postId], references: [id])
-  user      User     @relation(fields: [userId], references: [id])
-
-  @@unique([postId, userId])
+  user      User     @relation(fields: [authorId], references: [id])
 }
 
 model Like {
-  id     Int  @id @default(autoincrement())
+  id     Int   @id @default(autoincrement())
   postId Int
-  userId Int
-  post   Post @relation(fields: [postId], references: [id])
-  user   User @relation(fields: [userId], references: [id])
+  userId String
+  post   Post  @relation(fields: [postId], references: [id])
+  user   User  @relation(fields: [userId], references: [id])
 
   @@unique([postId, userId])
 }
 
 model Save {
-  id     Int  @id @default(autoincrement())
+  id     Int   @id @default(autoincrement())
   postId Int
-  userId Int
-  post   Post @relation(fields: [postId], references: [id])
-  user   User @relation(fields: [userId], references: [id])
+  userId String
+  post   Post  @relation(fields: [postId], references: [id])
+  user   User  @relation(fields: [userId], references: [id])
 
   @@unique([postId, userId])
 }
 
 model Follow {
-  id          Int  @id @default(autoincrement())
-  followerId  Int
-  followingId Int
-  follower    User @relation("UserFollowers", fields: [followerId], references: [id])
-  following   User @relation("UserFollowing", fields: [followingId], references: [id])
+  id          Int    @id @default(autoincrement())
+  followerId  String
+  followingId String
+  follower    User   @relation("UserFollowers", fields: [followerId], references: [id])
+  following   User   @relation("UserFollowing", fields: [followingId], references: [id])
 
   @@unique([followerId, followingId])
 }
