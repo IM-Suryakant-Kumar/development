@@ -13,9 +13,10 @@ export async function POST(req: NextRequest) {
       await db.user.create({
         data: {
           id: evt.data.id,
-          username: evt.data.username!,
           name: evt.data.first_name,
           surname: evt.data.last_name,
+          email: evt.data.email_addresses[0]!.email_address,
+          username: evt.data.username!,
           avatar: evt.data.image_url,
         },
       });
@@ -25,14 +26,14 @@ export async function POST(req: NextRequest) {
 
     if (evt.type === "user.updated") {
       await db.user.update({
-        where:  {id: evt.data.id},
+        where: { id: evt.data.id },
         data: {
           username: evt.data.username!,
           name: evt.data.first_name,
           surname: evt.data.last_name,
           avatar: evt.data.image_url,
-         }
-      })
+        },
+      });
 
       return new Response("User updated", { status: 200 });
     }
