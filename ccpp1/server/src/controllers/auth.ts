@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { asyncWrapper } from "../middlewares";
 import { User } from "../models";
 import { BadRequestError, NotFoundError } from "../errors";
+import { sendToken } from "../utils";
 
 export const signup = asyncWrapper(async (req: Request, res: Response) => {
 	const { name, username, email, password } = req.body;
@@ -9,9 +10,7 @@ export const signup = asyncWrapper(async (req: Request, res: Response) => {
 		throw new BadRequestError("Please provide all fields");
 	}
 	const user = await User.create(req.body);
-	res
-		.status(201)
-		.json({ success: true, user, message: "User created successfully" });
+	sendToken(res, user, 201, "Signed up successfully");
 });
 
 export const login = asyncWrapper(async (req: Request, res: Response) => {
@@ -27,12 +26,16 @@ export const login = asyncWrapper(async (req: Request, res: Response) => {
 	if (!isPasswordValid) {
 		throw new BadRequestError("Invalid credentials");
 	}
-	const token = user.createJWTToken();
-	res.status(200).json({ success: true, token });
+	sendToken(res, user, 200, "Logged in successfully");
 });
 
 export const logout = asyncWrapper(async (req: Request, res: Response) => {
 	res
+		.clearCookie("token", {
+			httpOnly: true,
+			secure: process.env.NODE_ENV === "production",
+			signed: true,
+		})
 		.status(200)
 		.json({ success: true, message: "User logged out successfully" });
 });
