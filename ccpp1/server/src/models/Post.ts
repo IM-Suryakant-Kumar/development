@@ -1,4 +1,6 @@
 import { model, Schema } from "mongoose";
+import { User } from "./User";
+import { Comment } from "./Comment";
 
 export interface IPost extends Document {
 	content: string;
@@ -20,6 +22,12 @@ const postSchema = new Schema<IPost>(
 	{ timestamps: true }
 );
 
-postSchema;
+postSchema.post("findOneAndDelete", async function (doc) {
+	if (doc) {
+		await User.updateMany({ likes: doc._id }, { $pull: { likes: doc._id } });
+		await User.updateMany({ saves: doc._id }, { $pull: { saves: doc._id } });
+		await Comment.deleteMany({ post: doc._id });
+	}
+});
 
 export const Post = model<IPost>("Post", postSchema);

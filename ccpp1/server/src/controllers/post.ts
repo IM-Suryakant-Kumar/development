@@ -42,7 +42,7 @@ export const updatePost = asyncWrapper(async (req: Request, res: Response) => {
 	if (!post) {
 		throw new NotFoundError("Post not found");
 	}
-	res.status(200).json({ message: "Post updated", post });
+	res.status(200).json({ success: true, message: "Post updated", post });
 });
 
 export const deletePost = asyncWrapper(async (req: Request, res: Response) => {
@@ -51,65 +51,5 @@ export const deletePost = asyncWrapper(async (req: Request, res: Response) => {
 	if (!post) {
 		throw new NotFoundError("Post not found");
 	}
-	res.status(200).json({ message: "Post deleted" });
-});
-
-export const likePost = asyncWrapper(async (req: Request, res: Response) => {
-	const { id } = req.params;
-	const { userId } = req.body;
-	const post = await Post.findById(id);
-	if (!post) {
-		throw new NotFoundError("Post not found");
-	}
-	if (post.likes.includes(userId)) {
-		res.status(400).json({ message: "Post already liked" });
-	}
-	post.likes.push(userId);
-	await post.save();
-	res.status(200).json({ message: "Post liked", post });
-});
-
-export const unlikePost = asyncWrapper(async (req: Request, res: Response) => {
-	const { id } = req.params;
-	const { userId } = req.body;
-	const post = await Post.findById(id);
-	if (!post) {
-		res.status(404).json({ message: "Post not found" });
-	}
-	if (!post.likes.includes(userId)) {
-		res.status(400).json({ message: "Post not liked yet" });
-	}
-	post.likes = post.likes.filter((like) => like !== userId);
-	await post.save();
-	res.status(200).json({ message: "Post unliked", post });
-});
-
-export const savePost = asyncWrapper(async (req: Request, res: Response) => {
-	const { id } = req.params;
-	const { userId } = req.body;
-	const post = await Post.findById(id);
-	if (!post) {
-		res.status(404).json({ message: "Post not found" });
-	}
-	if (post.savedBy.includes(userId)) {
-		res.status(400).json({ message: "Post already saved" });
-	}
-	post.savedBy.push(userId);
-	await post.save();
-	res.status(200).json({ message: "Post saved", post });
-});
-
-export const unsavePost = asyncWrapper(async (req: Request, res: Response) => {
-	const { id } = req.params;
-	const { userId } = req.body;
-	const post = await Post.findById(id);
-	if (!post) {
-		res.status(404).json({ message: "Post not found" });
-	}
-	if (!post.savedBy.includes(userId)) {
-		res.status(400).json({ message: "Post not saved yet" });
-	}
-	post.savedBy = post.savedBy.filter((user) => user !== userId);
-	await post.save();
-	res.status(200).json({ message: "Post unsaved", post });
+	res.status(200).json({ success: true, message: "Post deleted" });
 });

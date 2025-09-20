@@ -15,4 +15,10 @@ const commentSchema = new Schema<IComment>(
 	{ timestamps: true }
 );
 
+commentSchema.post("findOneAndDelete", async function (doc) {
+  if (doc) {
+    await model("Post").findByIdAndUpdate(doc.post, { $pull: { comments: doc._id } });
+  }
+});
+
 export const Comment = model<IComment>("Comment", commentSchema);
