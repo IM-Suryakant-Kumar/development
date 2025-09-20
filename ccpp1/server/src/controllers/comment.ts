@@ -18,6 +18,22 @@ export const createComment = asyncWrapper(
 	}
 );
 
+export const updateComment = asyncWrapper(
+  async (req: Request, res: Response) => {
+    const { id } = req.params;
+    const { content } = req.body;
+    const comment = await Comment.findByIdAndUpdate(
+      id,
+      { content },
+      { new: true }
+    );
+    if (!comment) {
+      throw new NotFoundError("Comment not found");
+    }
+    res.status(200).json({ success: true, message: "Comment updated", comment });
+  }
+);  
+
 export const deleteComment = asyncWrapper(
 	async (req: Request, res: Response) => {
 		const { id } = req.params;
