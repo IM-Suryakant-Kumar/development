@@ -4,7 +4,7 @@ import helmet from "helmet";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
-import { errorHandlerMiddleware, notFoundMiddleware } from "./middlewares";
+import { authenticateUser, errorHandlerMiddleware, notFoundMiddleware } from "./middlewares";
 import { connectDB } from "./db";
 import { authRouter, commentRouter, postRouter, userRouter } from "./routes";
 
@@ -21,9 +21,9 @@ app.use(morgan("tiny"));
 
 // Routes
 app.use("/api/v1/auth", authRouter);
-app.use("/api/v1/users", userRouter);
-app.use("/api/v1/posts", postRouter);
-app.use("/api/v1/comments", commentRouter);
+app.use("/api/v1/users", authenticateUser, userRouter);
+app.use("/api/v1/posts", authenticateUser, postRouter);
+app.use("/api/v1/comments", authenticateUser, commentRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
