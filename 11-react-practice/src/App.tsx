@@ -1,51 +1,14 @@
-import { useState } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router"
+import Home from "./pages/Home"
+import StarRating from "./pages/StarRating"
 
-function SearchSuggestion() {
-	const fruits = [
-		"Apple",
-		"Banana",
-		"Cherry",
-		"Date",
-		"Elderberry",
-		"Fig",
-		"Grape",
-		"Honeydew",
-	];
-	const [searchTerm, setSearchTerm] = useState("");
-	const [filteredFruits, setFilteredFruits] = useState<string[]>([]);
+const App = () => {
+  const router = createBrowserRouter([
+    {path: "/", Component: Home},
+    {path: "/star-rating", Component: StarRating},
+  ])
 
-	return (
-		<div>
-			<input
-				type="text"
-				value={searchTerm}
-				onChange={(e) => (setSearchTerm(e.target.value), setFilteredFruits(
-          fruits.filter((fruit) =>
-            fruit.toLowerCase().includes(e.target.value.toLowerCase())
-          )
-        ))}
-				placeholder="Search fruits..."
-			/>
-			{filteredFruits.length > 0 && (
-				<ul>
-					{filteredFruits.map((fruit, index) => (
-						<li
-							key={index}
-							onClick={() => (setSearchTerm(fruit), setFilteredFruits([]))}
-						>
-							{fruit}
-						</li>
-					))}
-				</ul>
-			)}
-		</div>
-	);
+  return <RouterProvider router={router} />
 }
 
-const App = () => (
-	<>
-		<SearchSuggestion />
-	</>
-);
-
-export default App;
+export default App
