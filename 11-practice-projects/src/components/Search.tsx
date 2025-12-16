@@ -3,18 +3,26 @@ import React, { useMemo, useState } from "react";
 const Search = () => {
 	const [search, setSearch] = useState("");
 
-	function debounce(
-		fn: (...args: React.ChangeEvent<HTMLInputElement>[]) => void
-	) {
-		let timeoutId: number;
+	// function debounce(
+	// 	fn: (...args: React.ChangeEvent<HTMLInputElement>[]) => void
+	// ) {
+	// 	let timeoutId: number;
 
-		return (...args: React.ChangeEvent<HTMLInputElement>[]) => {
-			if (timeoutId) clearTimeout(timeoutId);
-			timeoutId = setTimeout(() => {
-				fn(...args);
-			}, 1000);
-		};
-	}
+	// 	return (...args: React.ChangeEvent<HTMLInputElement>[]) => {
+	// 		if (timeoutId) clearTimeout(timeoutId);
+	// 		timeoutId = setTimeout(() => {
+	// 			fn(...args);
+	// 		}, 1000);
+	// 	};
+	// }
+
+  // const debounceChangehandler = useMemo(
+  //   () =>
+  //     debounce((e: React.ChangeEvent<HTMLInputElement>) => {
+  //       setSearch(e.target.value);
+  //     }),
+  //   []
+  // );
 
 	function throttle(
 		fn: (...args: React.ChangeEvent<HTMLInputElement>[]) => void
@@ -32,13 +40,6 @@ const Search = () => {
 		};
 	}
 
-	const debounceChangehandler = useMemo(
-		() =>
-			debounce((e: React.ChangeEvent<HTMLInputElement>) => {
-				setSearch(e.target.value);
-			}),
-		[]
-	);
 
 	const throttleChangehandler = useMemo(
 		() =>
