@@ -1,11 +1,13 @@
 import WrappedComp from "./hocs/WrappedComp";
 import StarRating from "./components/StarRating";
 import Search from "./components/Search";
+import AutoSearch from "./components/AutoSearch";
 
 const App = () => {
 	const projects = [
 		{ heading: "1. Star Rating", component: StarRating },
-		{ heading: "1. Star Rating", component: Search },
+		{ heading: "2. Search", component: Search },
+		{ heading: "3. AutoSearch", component: AutoSearch },
 	] as const;
 
 	return (

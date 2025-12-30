@@ -40,7 +40,6 @@ const Search = () => {
 		};
 	}
 
-
 	const throttleChangehandler = useMemo(
 		() =>
 			throttle((e: React.ChangeEvent<HTMLInputElement>) => {
