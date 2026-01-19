@@ -1,13 +1,17 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import {
+	createContext,
+	useContext,
+	useEffect,
+	useReducer,
+} from "react";
 import { cartReducer, initialState } from "./reducer";
 
 const CartContext = createContext<AppContext | null>(null);
 export const useCart = () => useContext(CartContext) as AppContext;
 
-const CartContextProvider = () => {
+const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
 	const [state, dispatch] = useReducer(cartReducer, initialState);
-
-  
+  console.log(state)
 
 	useEffect(() => {
 		let ignore = false;
@@ -25,7 +29,9 @@ const CartContextProvider = () => {
 		};
 	}, []);
 
-	return <CartContext.Provider value={{ state }}></CartContext.Provider>;
+	return (
+		<CartContext.Provider value={{ state }}>{children}</CartContext.Provider>
+	);
 };
 
 export default CartContextProvider;

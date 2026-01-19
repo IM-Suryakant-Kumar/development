@@ -1,6 +1,8 @@
+import CartContextProvider from "./context"
+
 const App = () => {
   return (
-    <>App</>
+    <CartContextProvider>App</CartContextProvider>
   )
 }
 

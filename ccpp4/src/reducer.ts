@@ -3,22 +3,24 @@ export const initialState: State = {
 	carts: [],
 };
 
-export const cartReducer = (state: State, action: Action) => {
+export const cartReducer = (state: State, action: Action): State => {
 	switch (action.type) {
 		case "GET_PRODUCTS":
-			return { ...state, products: action.payload };
+			return { ...state, products: action.payload.products };
 		case "ADD_TO_CART":
-			return { ...state, carts: [...state.carts, action.payload] };
+			return { ...state, carts: [...state.carts, { ...action.payload.cart! }] };
 		case "REMOVE_FROM_CART":
 			return {
 				...state,
-				carts: state.carts.filter((c) => c.id !== action.payload.id),
+				carts: state.carts.filter((c) => c.id !== action.payload.cart?.id),
 			};
 		case "CHANGE_CART_QTY":
 			return {
 				...state,
 				carts: state.carts.map((c) =>
-					c.id === action.payload.id ? (c.qty = action.payload.qty) : c.qty,
+					c.id === action.payload.cart?.id
+						? { ...c, qty: action.payload.cart?.qty }
+						: c,
 				),
 			};
 		default:
