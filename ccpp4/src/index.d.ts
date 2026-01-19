@@ -10,8 +10,8 @@ interface ICart extends IProduct {
 }
 
 interface State {
-	products: IProduct[];
-	carts: ICart[];
+	products?: IProduct[];
+	carts?: ICart[];
 	cart?: ICart;
 }
 
@@ -21,5 +21,8 @@ interface Action {
 }
 
 interface AppContext {
-  state: State;
+	state: State;
+	addToCart(cart: ICart): void;
+	removeFromCart(cart: ICart): void;
+	changeCartQTY(cart: ICart): void;
 }

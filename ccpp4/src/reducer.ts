@@ -8,16 +8,16 @@ export const cartReducer = (state: State, action: Action): State => {
 		case "GET_PRODUCTS":
 			return { ...state, products: action.payload.products };
 		case "ADD_TO_CART":
-			return { ...state, carts: [...state.carts, { ...action.payload.cart! }] };
+			return { ...state, carts: [...state.carts!, { ...action.payload.cart! }] };
 		case "REMOVE_FROM_CART":
 			return {
 				...state,
-				carts: state.carts.filter((c) => c.id !== action.payload.cart?.id),
+				carts: state.carts?.filter((c) => c.id !== action.payload.cart?.id),
 			};
 		case "CHANGE_CART_QTY":
 			return {
 				...state,
-				carts: state.carts.map((c) =>
+				carts: state.carts?.map((c) =>
 					c.id === action.payload.cart?.id
 						? { ...c, qty: action.payload.cart?.qty }
 						: c,
