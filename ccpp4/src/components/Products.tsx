@@ -22,7 +22,7 @@ const Products = () => {
 						{carts?.find((c) => c.id === p.id) ? (
 							<button
 								className="w-full py-2 border border-gray-300 rounded cursor-pointer"
-								onClick={() => removeFromCart({ ...p, qty: 1 })}
+								onClick={() => removeFromCart({ ...p, qty: 0 })}
 							>
 								Remove from Cart
 							</button>
