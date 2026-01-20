@@ -1,7 +1,14 @@
-const Layout = () => {
-  return (
-    <div>Layout</div>
-  )
-}
+import { Outlet } from "react-router";
+import Navbar from "./Navbar";
+import ThemeProvider from "../contexts/Theme";
 
-export default Layout
+const Layout = () => {
+	return (
+		<ThemeProvider>
+			<Navbar />
+			<Outlet />
+		</ThemeProvider>
+	);
+};
+
+export default Layout;
