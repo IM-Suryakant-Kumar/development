@@ -19,17 +19,9 @@ export interface IUser {
 
 const userSchema = new Schema<IUser>(
 	{
-		name: { type: String, required: [true, "Please provide name"] },
-		email: {
-			type: String,
-			required: [true, "Please provide email"],
-			unique: true,
-		},
-		password: {
-			type: String,
-			required: [true, "Please provide password"],
-			select: false,
-		},
+		name: { type: String, required: true },
+		email: { type: String, required: true, unique: true },
+		password: { type: String, required: true, select: false },
 		bio: { type: String },
 		school: { type: String },
 		work: { type: String },
