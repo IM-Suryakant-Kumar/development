@@ -15,3 +15,7 @@ interface SuccessResponse {
 	token?: string;
 	user?: IUser;
 }
+
+interface ErrorResponse {
+	data: { message?: string };
+}

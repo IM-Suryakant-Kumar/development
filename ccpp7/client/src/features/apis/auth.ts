@@ -6,7 +6,7 @@ const auth = api.injectEndpoints({
 		getProfile: build.query<SuccessResponse, void>({
 			query: () => ({
 				url: "/auth/me",
-				method: "get",
+				method: "GET",
 				headers: {
 					Authorization: `Bearer ${getToken()}`,
 				},
@@ -16,7 +16,7 @@ const auth = api.injectEndpoints({
 		updateProfile: build.mutation<SuccessResponse, IUser>({
 			query: (body) => ({
 				url: "/auth/me",
-				method: "patch",
+				method: "PATCH",
 				headers: {
 					Authorization: `Bearer ${getToken()}`,
 				},
@@ -27,7 +27,7 @@ const auth = api.injectEndpoints({
 		signup: build.mutation<SuccessResponse, IUser>({
 			query: (body) => ({
 				url: "/auth",
-				method: "post",
+				method: "POST",
 				body,
 			}),
 			invalidatesTags: (result) => {
@@ -38,7 +38,7 @@ const auth = api.injectEndpoints({
 		login: build.mutation<SuccessResponse, IUser>({
 			query: (body) => ({
 				url: "/auth",
-				method: "patch",
+				method: "PATCH",
 				body,
 			}),
 			invalidatesTags: (result) => {
@@ -49,7 +49,7 @@ const auth = api.injectEndpoints({
 		logout: build.mutation<SuccessResponse, IUser>({
 			query: (body) => ({
 				url: "/auth",
-				method: "get",
+				method: "GET",
 				body,
 			}),
 			invalidatesTags: (result) => {

@@ -20,23 +20,27 @@ export const Login = () => {
 			>
 				<h2 className="text-2xl font-semibold text-center my-4">Login</h2>
 
-				{/* {error && <p className="text-red-400 text-xs">{error?.message}</p>} */}
+				{error && (
+					<p className="text-red-400 text-xs text-center">
+						{(error as ErrorResponse).data.message}
+					</p>
+				)}
 
 				<input
 					type="email"
 					name="email"
 					placeholder="Email: "
 					className="border-b border-gray-300"
-          // required
+					required
 				/>
 				<input
 					type="text"
 					name="password"
 					placeholder="Password: "
 					className="border-b border-gray-300"
-          // required
-          // minLength={3}
-          // maxLength={8}
+					required
+					minLength={3}
+					maxLength={8}
 				/>
 				<button
 					className="bg-blue-500 text-white my-4 py-1 rounded"
