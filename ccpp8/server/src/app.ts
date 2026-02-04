@@ -4,6 +4,7 @@ import helmet from "helmet";
 import cors from "cors";
 import { connect } from "mongoose";
 import { errorHandlerMiddleware, notFoundMiddleware } from "./middlewares";
+import { authRouter } from "./routes";
 
 const PORT = process.env.PORT;
 const app = express();
@@ -11,6 +12,8 @@ const app = express();
 app.use(express.json());
 app.use(helmet());
 app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+
+app.use("/auth", authRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
