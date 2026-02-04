@@ -43,7 +43,7 @@ export const auth = api.injectEndpoints({
 					Authorization: `Bearer ${getToken()}`,
 				},
 			}),
-			providesTags: (result) => (result ? ["Auth"] : []),
+			providesTags: ["Auth"],
 		}),
 		updateProfile: build.mutation<SuccessResponse, IUser>({
 			query: (body) => ({
