@@ -31,16 +31,12 @@ export const Login = () => {
 					name="email"
 					placeholder="Email: "
 					className="border-b border-gray-300"
-					required
 				/>
 				<input
 					type="text"
 					name="password"
 					placeholder="Password: "
 					className="border-b border-gray-300"
-					required
-					minLength={3}
-					maxLength={8}
 				/>
 				<button
 					className="bg-blue-500 text-white my-4 py-1 rounded"
