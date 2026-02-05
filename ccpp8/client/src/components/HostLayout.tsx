@@ -12,7 +12,7 @@ export const HostLayout = () => {
 		<>
 			<Header />
 			<Sidebar />
-			<div className="p-4 mt-22 md:mt-15">
+			<div className="p-4 mt-22 md:mt-15 mb-15 md:ml-60">
 				<Outlet />
 			</div>
 		</>
