@@ -11,7 +11,7 @@ export const HostLayout = () => {
 	) : isSuccess ? (
 		<>
 			<Header />
-			{/* <Sidebar /> */}
+			<Sidebar />
 			<div className="p-4 mt-22 md:mt-15">
 				<Outlet />
 			</div>
